@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SDES", "SDES\SDES.csproj", "{D437F99E-47F9-4EC7-A67D-0AE00BC24221}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SDES.Test", "SDES.Test\SDES.Test.csproj", "{603E1831-CBC5-42D8-B78F-59DD3B4A20A1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D437F99E-47F9-4EC7-A67D-0AE00BC24221}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D437F99E-47F9-4EC7-A67D-0AE00BC24221}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D437F99E-47F9-4EC7-A67D-0AE00BC24221}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D437F99E-47F9-4EC7-A67D-0AE00BC24221}.Release|Any CPU.Build.0 = Release|Any CPU
+		{603E1831-CBC5-42D8-B78F-59DD3B4A20A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{603E1831-CBC5-42D8-B78F-59DD3B4A20A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{603E1831-CBC5-42D8-B78F-59DD3B4A20A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{603E1831-CBC5-42D8-B78F-59DD3B4A20A1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
