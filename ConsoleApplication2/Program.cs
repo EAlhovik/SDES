@@ -1,10 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using SDES;
 
 namespace ConsoleApplication2
@@ -17,10 +13,10 @@ namespace ConsoleApplication2
             int key = int.Parse(s: Console.ReadLine());
 
             SDesAlgorithm sDes = new SDesAlgorithm();
-
-            IList<byte> k1;
-            IList<byte> k2;
-            GenerateKeys(key, sDes, out k1, out k2);
+            sDes.GenerateKeys(key);
+//            IList<byte> k1;
+//            IList<byte> k2;
+//            GenerateKeys(key, sDes, out k1, out k2);
 
             Console.WriteLine("");
 //            Console.WriteLine("Enter text:");
@@ -47,7 +43,7 @@ namespace ConsoleApplication2
 
         private static void GenerateKeys(int key, SDesAlgorithm sDes, out IList<byte> k1, out IList<byte> k2)
         {
-            sDes.GenerateKeys(642);
+            sDes.GenerateKeys(key);
             var bytes = sDes.DecToBytes(key);
 
             bytes = sDes.ToP10(bytes);

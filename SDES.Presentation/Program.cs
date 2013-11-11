@@ -25,14 +25,14 @@ namespace SDES.Presentation
 
             var o = EncriptText(sDes, text, k1, k2);
 
-            DecriptText(sDes, o, k1, k2);
+         //   DecriptText(sDes, o, k1, k2);
 
             Console.ReadKey();
         }
 
         private static void GenerateKeys(int key, SDesAlgorithm sDes, out IList<byte> k1, out IList<byte> k2)
         {
-            sDes.GenerateKeys(642);
+            sDes.GenerateKeys(key);
             var bytes = sDes.DecToBytes(key);
 
             bytes = sDes.ToP10(bytes);
@@ -54,33 +54,33 @@ namespace SDES.Presentation
         private static string EncriptText(SDesAlgorithm sDes, string text, IList<byte> k1, IList<byte> k2)
         {
             var str = string.Empty;
-            for (var i = 0; i < 1; i++)
+            for (var i = 0; i < text.Count(); i++)
             {
                 var o = sDes.Encript(text[i].ToString());
                 str += o;
 
-                IList<byte> bytes = sDes.StringToBytes(text[i].ToString());
-                Console.WriteLine("Symbol: '{0}' to bytes: {1}", text[i], string.Join("", bytes));
+//                IList<byte> bytes = sDes.StringToBytes(text[i].ToString());
+//              //  Console.WriteLine("Symbol: '{0}' to bytes: {1}", text[i], string.Join("", bytes));
+//
+//                var ip = sDes.ToIP(bytes);
+//                Print("IP: {0}", ip);
+//
+//                var fk1 = sDes.Fk(ip, k1);
+//                Print("Fk: {0}", fk1);
+//
+//                var sw = sDes.SW(fk1, ip.Skip(4).Take(4).ToList());
+//                Print("SW: {0}", sw);
+//
+//                var fk2 = sDes.Fk(sw, k2);
+//                Print("Fk: {0}", fk2);
+//
+//                var sw2 = sDes.SW(fk1, fk2);
+//                Print("SW: {0}", sw2);
+//
+//                var ip_1 = sDes.ToIP_1(sw2);
+//                Print("IP-1 {0}", ip_1);
 
-                var ip = sDes.ToIP(bytes);
-                Print("IP: {0}", ip);
-
-                var fk1 = sDes.Fk(ip, k1);
-                Print("Fk: {0}", fk1);
-
-                var sw = sDes.SW(fk1, ip.Skip(4).Take(4).ToList());
-                Print("SW: {0}", sw);
-
-                var fk2 = sDes.Fk(sw, k2);
-                Print("Fk: {0}", fk2);
-
-                var sw2 = sDes.SW(fk1, fk2);
-                Print("SW: {0}", sw2);
-
-                var ip_1 = sDes.ToIP_1(sw2);
-                Print("IP-1 {0}", ip_1);
-
-                Console.WriteLine("Encrypt symbol: {0}", o);
+           //     Console.WriteLine("Encrypt symbol: {0}", o);
             }
             return str;
         }
@@ -89,29 +89,29 @@ namespace SDES.Presentation
             for (var i = 0; i < 1; i++)
             {
                 var o = sDes.Decript(text[i].ToString());
-
-                IList<byte> bytes = sDes.StringToBytes(text[i].ToString());
-                Console.WriteLine("Symbol: '{0}' to bytes: {1}", text[i], string.Join("", bytes));
-
-                var ip = sDes.ToIP(bytes);
-                Print("IP: {0}", ip);
-
-                var fk1 = sDes.Fk(ip, k2);
-                Print("Fk: {0}", fk1);
-
-                var sw = sDes.SW(fk1, ip.Skip(4).Take(4).ToList());
-                Print("SW: {0}", sw);
-
-                var fk2 = sDes.Fk(sw, k1);
-                Print("Fk: {0}", fk2);
-
-                var sw2 = sDes.SW(fk1, fk2);
-                Print("SW: {0}", sw2);
-
-                var ip_1 = sDes.ToIP_1(sw2);
-                Print("IP-1 {0}", ip_1);
-
-                Console.WriteLine("Decrypt symbol: {0}", o);
+//
+//                IList<byte> bytes = sDes.StringToBytes(text[i].ToString());
+//                Console.WriteLine("Symbol: '{0}' to bytes: {1}", text[i], string.Join("", bytes));
+//
+//                var ip = sDes.ToIP(bytes);
+//                Print("IP: {0}", ip);
+//
+//                var fk1 = sDes.Fk(ip, k2);
+//                Print("Fk: {0}", fk1);
+//
+//                var sw = sDes.SW(fk1, ip.Skip(4).Take(4).ToList());
+//                Print("SW: {0}", sw);
+//
+//                var fk2 = sDes.Fk(sw, k1);
+//                Print("Fk: {0}", fk2);
+//
+//                var sw2 = sDes.SW(fk1, fk2);
+//                Print("SW: {0}", sw2);
+//
+//                var ip_1 = sDes.ToIP_1(sw2);
+//                Print("IP-1 {0}", ip_1);
+//
+//                Console.WriteLine("Decrypt symbol: {0}", o);
             }
         }
 

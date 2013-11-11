@@ -144,6 +144,7 @@ namespace SDES
             {
                 result[j] = byte.Parse(stringButes[i].ToString());
             }
+            Console.Write("symbol='{0}' in dec='{1}' in bin='{2}' ",key, value,string.Join(string.Empty,result));
             return result;
 
         }
@@ -267,7 +268,7 @@ namespace SDES
         public string Encript(string symbol)
         {
             IList<byte> bytes = StringToBytes(symbol);
-
+            
             var ip = ToIP(bytes);
 
             var fk1 = Fk(ip, k1);
@@ -285,7 +286,7 @@ namespace SDES
 
             var a = Encoding.GetEncoding("cp866");
             var text = a.GetString(new[] { (byte)dec });
-
+            Console.WriteLine("result='{0}' result in dec='{1}'", stringBin, dec);
             return text;
         }
 
@@ -309,6 +310,7 @@ namespace SDES
             var dec = Convert.ToInt32(stringBin, 2);
             var a = Encoding.GetEncoding("cp866");
             var text = a.GetString(new[] { (byte)dec });
+            Console.WriteLine(" result='{2}'", symbol, string.Join(string.Empty, bytes), stringBin);
             return text;
         }
 
